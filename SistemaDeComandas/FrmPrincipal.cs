@@ -5,6 +5,8 @@ namespace SistemaDeComandas
         public FrmPrincipal()
         {
             InitializeComponent();
+
+            // criar o banco de dados
         }
     }
 }
