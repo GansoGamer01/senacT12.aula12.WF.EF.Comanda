@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using SistemaDeComandas.BancoDeDados;
+
 namespace SistemaDeComandas
 {
     public partial class FrmPrincipal : Form
@@ -5,8 +8,17 @@ namespace SistemaDeComandas
         public FrmPrincipal()
         {
             InitializeComponent();
+            criarBancoDeDados();
+           
+        }
 
-            // criar o banco de dados
+        void criarBancoDeDados()
+        {
+            using (var banco = new ComandaContexto())
+            {
+                // criando um novo(new) contexto do banco \\
+                banco.Database.Migrate();
+            }
         }
     }
 }
