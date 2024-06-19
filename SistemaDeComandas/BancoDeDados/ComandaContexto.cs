@@ -27,15 +27,16 @@ namespace SistemaDeComandas.BancoDeDados
         // para configurar os relacionamentos das tabelas \\
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            //acesse a entidade cardapioItem para determinar a nomenclatura \\
-            modelBuilder.Entity<Comanda>()
-                .HasComment("cadastro de itens do cardapio");
-
             // uma comanda possui muitos comandaItens \\
             // e sua chave estrangeira é comandaId \\
             modelBuilder.Entity<Comanda>()
-                .HasMany<ComandaItem>()
+                .HasMany(c=>c.ComandaItems)
                 .WithOne(ci => ci.Comanda)
+                .HasForeignKey(f => f.ComandaId);
+
+            modelBuilder.Entity<ComandaItem>()
+                .HasOne(ci=>ci.Comanda)
+                .WithMany(ci => ci.ComandaItems)
                 .HasForeignKey(f => f.ComandaId);
 
             // o item da comanda possui um item do Cardapio \\
@@ -43,7 +44,7 @@ namespace SistemaDeComandas.BancoDeDados
             modelBuilder.Entity<ComandaItem>()
                 .HasOne(ci => ci.CardapioItem)
                 .WithMany()
-                .HasForeignKey(ASCIIEncoding => ASCIIEncoding.CardapioItemId);
+                .HasForeignKey(tico => tico.CardapioItemId);
 
             // pedido cozinha com pedido cozinha item \\
             modelBuilder.Entity<PedidoCozinha>()
@@ -54,9 +55,9 @@ namespace SistemaDeComandas.BancoDeDados
             // pedido cozinha item possui um comanda id \\
             // e sua chave estrangeira é comanda id \\
             modelBuilder.Entity<PedidoCozinhaItem>()
-                .HasOne(pci => pci.ComandaItem)
-                .WithMany()
-                .HasForeignKey(pci => pci.ComandaItemId);
+                .HasOne(ci => ci.PedidoCozinha)
+                .WithMany(ci => ci.PedidoCozinhaItems)
+                .HasForeignKey(pci => pci.PedidoCozinhaId);
 
             base.OnModelCreating(modelBuilder);
         }
