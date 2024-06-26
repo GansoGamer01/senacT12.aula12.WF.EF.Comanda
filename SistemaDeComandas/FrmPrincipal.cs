@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SistemaDeComandas.BancoDeDados;
+using SistemaDeComandas.Modelos;
 
 namespace SistemaDeComandas
 {
@@ -9,7 +10,27 @@ namespace SistemaDeComandas
         {
             InitializeComponent();
             criarBancoDeDados();
+            criarUsuarioAdm();
+        }
 
+        private void criarUsuarioAdm()
+        {
+            // acessa o banco de dados \\
+            using (var banco = new ComandaContexto())
+            {
+                //verificar se ja existe um admn \\
+                // cria um novo usuario \\
+                var novoUsuario = new Usuario();
+                novoUsuario.Nome = "adm";
+                novoUsuario.Email = "adm@comanda.com";
+                novoUsuario.Senha = "123";
+
+                // banco, adicione na coleção usuario um novo usuario \\
+                banco.Usuarios.Add(novoUsuario);
+
+                // confirmar a adição \\
+                banco.SaveChanges();
+            }
         }
 
         void criarBancoDeDados()
