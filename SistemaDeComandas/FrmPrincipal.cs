@@ -10,7 +10,7 @@ namespace SistemaDeComandas
         {
             InitializeComponent();
             criarBancoDeDados();
-            criarUsuarioAdm();
+            criarUsuarioAdm(); 
         }
 
         private void criarUsuarioAdm()
@@ -18,10 +18,18 @@ namespace SistemaDeComandas
             // acessa o banco de dados \\
             using (var banco = new ComandaContexto())
             {
-                //verificar se ja existe um admn \\
+                // verificar se ja existe um admn \\
+                var usuarioExiste = banco
+                    .Usuarios
+                    .FirstOrDefault(usuario => usuario
+                    .Nome
+                    .Equals("Adm"));
+                if (usuarioExiste != null) 
+                    return;
+                 
                 // cria um novo usuario \\
                 var novoUsuario = new Usuario();
-                novoUsuario.Nome = "adm";
+                novoUsuario.Nome = "Adm";
                 novoUsuario.Email = "adm@comanda.com";
                 novoUsuario.Senha = "123";
 

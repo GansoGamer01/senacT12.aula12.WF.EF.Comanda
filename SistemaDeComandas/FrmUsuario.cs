@@ -14,6 +14,8 @@ namespace SistemaDeComandas
 {
     public partial class FrmUsuario : Form
     {
+        private bool eNovoUsuario;
+
         public FrmUsuario()
         {
             InitializeComponent();
@@ -22,13 +24,15 @@ namespace SistemaDeComandas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            CriarUsuario();
-            AtualizarUsuario();
+            if(eNovoUsuario)
+                CriarUsuario();
+            else
+                AtualizarUsuario();
         }
 
         private void carregarUsuarios()
         {
-            using (var banco = new ComandaContexto()) 
+            using (var banco = new ComandaContexto())
             {
                 // consulta todos os usuarios na tabela usuarios (SELECT * FROM usuarios) \\
                 var usuarios = banco.Usuarios.ToList();
@@ -40,7 +44,19 @@ namespace SistemaDeComandas
 
         private void AtualizarUsuario()
         {
-            
+            using (var banco = new ComandaContexto())
+            {
+                // buscar o usuario pelo ID \\
+                var usuario = banco.Usuarios.First(usuario => usuario.Id == 1);
+
+                // atualizar as propriedades \\
+                usuario.Nome = txtNome.TextButton;
+                usuario.Email = txtEmail.TextButton;
+                usuario.Senha = txtSenha.TextButton;
+
+                // salvar as alterações \\
+                banco.SaveChanges();
+            }
         }
 
         private void CriarUsuario()
@@ -62,14 +78,14 @@ namespace SistemaDeComandas
                 MessageBox.Show("preencha o Senha");
                 return;
             }
-            using (var banco = new ComandaContexto()) 
+            using (var banco = new ComandaContexto())
             {
                 // criar objeto usuario \\
                 var novoUsuario = new Usuario();
                 novoUsuario.Nome = txtNome.Text;
                 novoUsuario.Email = txtEmail.Text;
                 novoUsuario.Senha = txtSenha.Text;
-                
+
                 // adiciona esse objeto no contexto do banco \\
                 banco.Usuarios.Add(novoUsuario);
 
@@ -77,5 +93,24 @@ namespace SistemaDeComandas
                 banco.SaveChanges();
             }
         }
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            eNovoUsuario = true;
+            txtNome.TextButton = string.Empty;
+            txtEmail.TextButton = string.Empty;
+            txtSenha.TextButton = string.Empty;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            eNovoUsuario = false;
+
+        }
+        private void btnVoltar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        
     }
 }

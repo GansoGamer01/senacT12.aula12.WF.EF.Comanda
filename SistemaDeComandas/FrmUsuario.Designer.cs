@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
-            groupBox = new ReaLTaiizor.Controls.CyberGroupBox();
             dgvUsuarios = new ReaLTaiizor.Controls.PoisonDataGridView();
             cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
             btnEditar = new ReaLTaiizor.Controls.CyberButton();
@@ -42,12 +41,11 @@
             txtEmail = new ReaLTaiizor.Controls.CyberTextBox();
             txtNome = new ReaLTaiizor.Controls.CyberTextBox();
             txtSenha = new ReaLTaiizor.Controls.CyberTextBox();
-            btnCancelar = new ReaLTaiizor.Controls.CyberButton();
+            btnVoltar = new ReaLTaiizor.Controls.CyberButton();
             btnExcluir = new ReaLTaiizor.Controls.CyberButton();
             btnSalvar = new ReaLTaiizor.Controls.CyberButton();
             btnNovo = new ReaLTaiizor.Controls.CyberButton();
             foreverForm1.SuspendLayout();
-            groupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).BeginInit();
             cyberGroupBox1.SuspendLayout();
             SuspendLayout();
@@ -57,7 +55,7 @@
             foreverForm1.BackColor = Color.White;
             foreverForm1.BaseColor = Color.FromArgb(60, 70, 73);
             foreverForm1.BorderColor = Color.DodgerBlue;
-            foreverForm1.Controls.Add(groupBox);
+            foreverForm1.Controls.Add(dgvUsuarios);
             foreverForm1.Controls.Add(cyberGroupBox1);
             foreverForm1.Dock = DockStyle.Fill;
             foreverForm1.Font = new Font("Segoe UI", 12F);
@@ -71,44 +69,11 @@
             foreverForm1.Name = "foreverForm1";
             foreverForm1.Padding = new Padding(1, 51, 1, 1);
             foreverForm1.Sizable = true;
-            foreverForm1.Size = new Size(800, 450);
+            foreverForm1.Size = new Size(800, 581);
             foreverForm1.TabIndex = 0;
             foreverForm1.Text = "foreverForm1";
             foreverForm1.TextColor = Color.FromArgb(234, 234, 234);
             foreverForm1.TextLight = Color.SeaGreen;
-            // 
-            // groupBox
-            // 
-            groupBox.Alpha = 20;
-            groupBox.BackColor = Color.Transparent;
-            groupBox.Background = true;
-            groupBox.Background_WidthPen = 3F;
-            groupBox.BackgroundPen = true;
-            groupBox.ColorBackground = Color.FromArgb(37, 52, 68);
-            groupBox.ColorBackground_1 = Color.FromArgb(37, 52, 68);
-            groupBox.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            groupBox.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
-            groupBox.ColorLighting = Color.FromArgb(29, 200, 238);
-            groupBox.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            groupBox.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            groupBox.Controls.Add(dgvUsuarios);
-            groupBox.CyberGroupBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            groupBox.ForeColor = Color.FromArgb(245, 245, 245);
-            groupBox.Lighting = false;
-            groupBox.LinearGradient_Background = false;
-            groupBox.LinearGradientPen = false;
-            groupBox.Location = new Point(12, 314);
-            groupBox.Name = "groupBox";
-            groupBox.PenWidth = 15;
-            groupBox.RGB = false;
-            groupBox.Rounding = true;
-            groupBox.RoundingInt = 60;
-            groupBox.Size = new Size(776, 117);
-            groupBox.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            groupBox.TabIndex = 1;
-            groupBox.Tag = "Cyber";
-            groupBox.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            groupBox.Timer_RGB = 300;
             // 
             // dgvUsuarios
             // 
@@ -117,40 +82,40 @@
             dgvUsuarios.BorderStyle = BorderStyle.None;
             dgvUsuarios.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dgvUsuarios.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle8.ForeColor = Color.FromArgb(136, 136, 136);
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle8.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(136, 136, 136);
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle2;
             dgvUsuarios.EnableHeadersVisualStyles = false;
             dgvUsuarios.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
             dgvUsuarios.GridColor = Color.FromArgb(255, 255, 255);
-            dgvUsuarios.Location = new Point(44, 9);
+            dgvUsuarios.Location = new Point(12, 328);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.FromArgb(0, 174, 219);
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(255, 255, 255);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(0, 198, 247);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(17, 17, 17);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.True;
-            dgvUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.FromArgb(0, 174, 219);
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Pixel);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(255, 255, 255);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(0, 198, 247);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(17, 17, 17);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvUsuarios.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvUsuarios.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvUsuarios.Size = new Size(674, 96);
+            dgvUsuarios.Size = new Size(776, 241);
             dgvUsuarios.TabIndex = 0;
             // 
             // cyberGroupBox1
@@ -174,7 +139,7 @@
             cyberGroupBox1.Controls.Add(txtEmail);
             cyberGroupBox1.Controls.Add(txtNome);
             cyberGroupBox1.Controls.Add(txtSenha);
-            cyberGroupBox1.Controls.Add(btnCancelar);
+            cyberGroupBox1.Controls.Add(btnVoltar);
             cyberGroupBox1.Controls.Add(btnExcluir);
             cyberGroupBox1.Controls.Add(btnSalvar);
             cyberGroupBox1.Controls.Add(btnNovo);
@@ -206,7 +171,7 @@
             btnEditar.ColorBackground = Color.FromArgb(37, 52, 68);
             btnEditar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnEditar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnEditar.ColorBackground_Pen = Color.Lime;
+            btnEditar.ColorBackground_Pen = Color.Gray;
             btnEditar.ColorLighting = Color.FromArgb(29, 200, 238);
             btnEditar.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnEditar.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -235,6 +200,7 @@
             btnEditar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnEditar.Timer_Effect_1 = 5;
             btnEditar.Timer_RGB = 300;
+            btnEditar.Click += btnEditar_Click;
             // 
             // foreverLabel3
             // 
@@ -364,45 +330,46 @@
             txtSenha.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             txtSenha.Timer_RGB = 300;
             // 
-            // btnCancelar
+            // btnVoltar
             // 
-            btnCancelar.Alpha = 20;
-            btnCancelar.BackColor = Color.Transparent;
-            btnCancelar.Background = true;
-            btnCancelar.Background_WidthPen = 4F;
-            btnCancelar.BackgroundPen = true;
-            btnCancelar.ColorBackground = Color.FromArgb(37, 52, 68);
-            btnCancelar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
-            btnCancelar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnCancelar.ColorBackground_Pen = Color.Lime;
-            btnCancelar.ColorLighting = Color.FromArgb(29, 200, 238);
-            btnCancelar.ColorPen_1 = Color.FromArgb(37, 52, 68);
-            btnCancelar.ColorPen_2 = Color.FromArgb(41, 63, 86);
-            btnCancelar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            btnCancelar.Effect_1 = true;
-            btnCancelar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
-            btnCancelar.Effect_1_Transparency = 25;
-            btnCancelar.Effect_2 = true;
-            btnCancelar.Effect_2_ColorBackground = Color.White;
-            btnCancelar.Effect_2_Transparency = 20;
-            btnCancelar.Font = new Font("Arial", 11F);
-            btnCancelar.ForeColor = Color.Red;
-            btnCancelar.Lighting = false;
-            btnCancelar.LinearGradient_Background = false;
-            btnCancelar.LinearGradientPen = false;
-            btnCancelar.Location = new Point(588, 192);
-            btnCancelar.Name = "btnCancelar";
-            btnCancelar.PenWidth = 15;
-            btnCancelar.Rounding = true;
-            btnCancelar.RoundingInt = 70;
-            btnCancelar.Size = new Size(130, 50);
-            btnCancelar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
-            btnCancelar.TabIndex = 3;
-            btnCancelar.Tag = "Cyber";
-            btnCancelar.TextButton = " ‹ Cancelar";
-            btnCancelar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            btnCancelar.Timer_Effect_1 = 5;
-            btnCancelar.Timer_RGB = 300;
+            btnVoltar.Alpha = 20;
+            btnVoltar.BackColor = Color.Transparent;
+            btnVoltar.Background = true;
+            btnVoltar.Background_WidthPen = 4F;
+            btnVoltar.BackgroundPen = true;
+            btnVoltar.ColorBackground = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
+            btnVoltar.ColorBackground_Pen = Color.Gray;
+            btnVoltar.ColorLighting = Color.FromArgb(29, 200, 238);
+            btnVoltar.ColorPen_1 = Color.FromArgb(37, 52, 68);
+            btnVoltar.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            btnVoltar.CyberButtonStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            btnVoltar.Effect_1 = true;
+            btnVoltar.Effect_1_ColorBackground = Color.FromArgb(29, 200, 238);
+            btnVoltar.Effect_1_Transparency = 25;
+            btnVoltar.Effect_2 = true;
+            btnVoltar.Effect_2_ColorBackground = Color.White;
+            btnVoltar.Effect_2_Transparency = 20;
+            btnVoltar.Font = new Font("Arial", 11F);
+            btnVoltar.ForeColor = Color.Red;
+            btnVoltar.Lighting = false;
+            btnVoltar.LinearGradient_Background = false;
+            btnVoltar.LinearGradientPen = false;
+            btnVoltar.Location = new Point(588, 192);
+            btnVoltar.Name = "btnVoltar";
+            btnVoltar.PenWidth = 15;
+            btnVoltar.Rounding = true;
+            btnVoltar.RoundingInt = 70;
+            btnVoltar.Size = new Size(130, 50);
+            btnVoltar.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            btnVoltar.TabIndex = 3;
+            btnVoltar.Tag = "Cyber";
+            btnVoltar.TextButton = " ‹ Voltar";
+            btnVoltar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            btnVoltar.Timer_Effect_1 = 5;
+            btnVoltar.Timer_RGB = 300;
+            btnVoltar.Click += btnVoltar_Click;
             // 
             // btnExcluir
             // 
@@ -414,7 +381,7 @@
             btnExcluir.ColorBackground = Color.FromArgb(37, 52, 68);
             btnExcluir.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnExcluir.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnExcluir.ColorBackground_Pen = Color.Lime;
+            btnExcluir.ColorBackground_Pen = Color.Gray;
             btnExcluir.ColorLighting = Color.FromArgb(29, 200, 238);
             btnExcluir.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnExcluir.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -454,7 +421,7 @@
             btnSalvar.ColorBackground = Color.FromArgb(37, 52, 68);
             btnSalvar.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnSalvar.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnSalvar.ColorBackground_Pen = Color.Lime;
+            btnSalvar.ColorBackground_Pen = Color.Gray;
             btnSalvar.ColorLighting = Color.FromArgb(29, 200, 238);
             btnSalvar.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnSalvar.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -495,7 +462,7 @@
             btnNovo.ColorBackground = Color.FromArgb(37, 52, 68);
             btnNovo.ColorBackground_1 = Color.FromArgb(37, 52, 68);
             btnNovo.ColorBackground_2 = Color.FromArgb(41, 63, 86);
-            btnNovo.ColorBackground_Pen = Color.Red;
+            btnNovo.ColorBackground_Pen = Color.Gray;
             btnNovo.ColorLighting = Color.Lime;
             btnNovo.ColorPen_1 = Color.FromArgb(37, 52, 68);
             btnNovo.ColorPen_2 = Color.FromArgb(41, 63, 86);
@@ -524,12 +491,13 @@
             btnNovo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnNovo.Timer_Effect_1 = 5;
             btnNovo.Timer_RGB = 300;
+            btnNovo.Click += btnNovo_Click;
             // 
             // FrmUsuario
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 581);
             Controls.Add(foreverForm1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmUsuario";
@@ -537,7 +505,6 @@
             Text = "FrmUsuario";
             TransparencyKey = Color.Fuchsia;
             foreverForm1.ResumeLayout(false);
-            groupBox.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
             cyberGroupBox1.ResumeLayout(false);
             cyberGroupBox1.PerformLayout();
@@ -548,7 +515,6 @@
 
         private ReaLTaiizor.Forms.ForeverForm foreverForm1;
         private ReaLTaiizor.Controls.CyberGroupBox cyberGroupBox1;
-        private ReaLTaiizor.Controls.CyberGroupBox groupBox;
         private ReaLTaiizor.Controls.CyberButton btnEditar;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel3;
         private ReaLTaiizor.Controls.ForeverLabel foreverLabel2;
@@ -556,7 +522,7 @@
         private ReaLTaiizor.Controls.CyberTextBox txtEmail;
         private ReaLTaiizor.Controls.CyberTextBox txtNome;
         private ReaLTaiizor.Controls.CyberTextBox txtSenha;
-        private ReaLTaiizor.Controls.CyberButton btnCancelar;
+        private ReaLTaiizor.Controls.CyberButton btnVoltar;
         private ReaLTaiizor.Controls.CyberButton btnExcluir;
         private ReaLTaiizor.Controls.CyberButton btnSalvar;
         private ReaLTaiizor.Controls.CyberButton btnNovo;
