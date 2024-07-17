@@ -24,10 +24,28 @@ namespace SistemaDeComandas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(eNovoUsuario)
+            if (eNovoUsuario)
                 CriarUsuario();
             else
                 AtualizarUsuario();
+
+            desabilitarCampos();
+            limparCampos();
+            carregarUsuarios();
+        }
+
+        private void limparCampos()
+        {
+            txtNome.TextButton = string.Empty;
+            txtEmail.TextButton = string.Empty;
+            txtSenha.TextButton = string.Empty;
+        }
+
+        private void desabilitarCampos()
+        {
+            txtNome.Enabled = false;
+            txtEmail.Enabled = false;
+            txtSenha.Enabled = false;
         }
 
         private void carregarUsuarios()
@@ -37,6 +55,7 @@ namespace SistemaDeComandas
                 // consulta todos os usuarios na tabela usuarios (SELECT * FROM usuarios) \\
                 var usuarios = banco.Usuarios.ToList();
 
+                dgvUsuarios.DataSource = null;
                 // dados da tabela usuarios serão exibidos no grid \\
                 dgvUsuarios.DataSource = usuarios;
             }
@@ -47,7 +66,7 @@ namespace SistemaDeComandas
             using (var banco = new ComandaContexto())
             {
                 // buscar o usuario pelo ID \\
-                var usuario = banco.Usuarios.First(usuario => usuario.Id == 1);
+                var usuario = banco.Usuarios.First(usuario => usuario.Id == int.Parse(txtId.TextButton));
 
                 // atualizar as propriedades \\
                 usuario.Nome = txtNome.TextButton;
@@ -57,6 +76,7 @@ namespace SistemaDeComandas
                 // salvar as alterações \\
                 banco.SaveChanges();
             }
+            MessageBox.Show("usuario atualizado com sucesso");
         }
 
         private void CriarUsuario()
@@ -89,16 +109,30 @@ namespace SistemaDeComandas
                 // adiciona esse objeto no contexto do banco \\
                 banco.Usuarios.Add(novoUsuario);
 
-                // salvar as alterações  (INSERT INTO Usuarios (id, Nome, Email) values() \\
+                // salvar as alterações  (INSERT INTO Usuarios (Nome, Email, senha) values() \\
                 banco.SaveChanges();
             }
+            MessageBox.Show("usuario cadastrado com sucesso");
+
         }
         private void btnNovo_Click(object sender, EventArgs e)
         {
+            // informa que está cadastrando um novo usuario \\
             eNovoUsuario = true;
-            txtNome.TextButton = string.Empty;
-            txtEmail.TextButton = string.Empty;
-            txtSenha.TextButton = string.Empty;
+
+            // limpa os campos da tela \\
+            limparCampos();
+
+            // chama o metodo que habilita os campos para digitação \\
+            habilitaCampos();
+
+        }
+
+        private void habilitaCampos()
+        {
+            txtNome.Enabled = true;
+            txtEmail.Enabled = true;
+            txtSenha.Enabled = true;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -111,6 +145,23 @@ namespace SistemaDeComandas
             Close();
         }
 
-        
+        private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // verificar se a linha foi selecionada \\
+            if(e.RowIndex >= 0)
+            {
+                // obter a linha \\
+                var linha = dgvUsuarios.Rows[e.RowIndex];
+
+                // popular os campos da tela de acordo com a linha \\
+                txtId.TextButton = linha.Cells["Id"].Value.ToString();
+                txtNome.TextButton = linha.Cells["Nome"].Value.ToString();
+                txtEmail.TextButton = linha.Cells["Email"].Value.ToString();
+                txtSenha.TextButton = linha.Cells["Senha"].Value.ToString();
+
+            }
+
+            
+        }
     }
 }

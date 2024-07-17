@@ -34,10 +34,12 @@
             foreverForm1 = new ReaLTaiizor.Forms.ForeverForm();
             dgvUsuarios = new ReaLTaiizor.Controls.PoisonDataGridView();
             cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
+            txtId = new ReaLTaiizor.Controls.CyberTextBox();
+            lblId = new ReaLTaiizor.Controls.ForeverLabel();
             btnEditar = new ReaLTaiizor.Controls.CyberButton();
-            foreverLabel3 = new ReaLTaiizor.Controls.ForeverLabel();
-            foreverLabel2 = new ReaLTaiizor.Controls.ForeverLabel();
-            foreverLabel1 = new ReaLTaiizor.Controls.ForeverLabel();
+            lblSenha = new ReaLTaiizor.Controls.ForeverLabel();
+            lblNome = new ReaLTaiizor.Controls.ForeverLabel();
+            lblEmail = new ReaLTaiizor.Controls.ForeverLabel();
             txtEmail = new ReaLTaiizor.Controls.CyberTextBox();
             txtNome = new ReaLTaiizor.Controls.CyberTextBox();
             txtSenha = new ReaLTaiizor.Controls.CyberTextBox();
@@ -117,6 +119,7 @@
             dgvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvUsuarios.Size = new Size(776, 241);
             dgvUsuarios.TabIndex = 0;
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             // 
             // cyberGroupBox1
             // 
@@ -132,10 +135,12 @@
             cyberGroupBox1.ColorLighting = Color.FromArgb(29, 200, 238);
             cyberGroupBox1.ColorPen_1 = Color.FromArgb(37, 52, 68);
             cyberGroupBox1.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberGroupBox1.Controls.Add(txtId);
+            cyberGroupBox1.Controls.Add(lblId);
             cyberGroupBox1.Controls.Add(btnEditar);
-            cyberGroupBox1.Controls.Add(foreverLabel3);
-            cyberGroupBox1.Controls.Add(foreverLabel2);
-            cyberGroupBox1.Controls.Add(foreverLabel1);
+            cyberGroupBox1.Controls.Add(lblSenha);
+            cyberGroupBox1.Controls.Add(lblNome);
+            cyberGroupBox1.Controls.Add(lblEmail);
             cyberGroupBox1.Controls.Add(txtEmail);
             cyberGroupBox1.Controls.Add(txtNome);
             cyberGroupBox1.Controls.Add(txtSenha);
@@ -160,6 +165,49 @@
             cyberGroupBox1.Tag = "Cyber";
             cyberGroupBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cyberGroupBox1.Timer_RGB = 300;
+            // 
+            // txtId
+            // 
+            txtId.Alpha = 20;
+            txtId.BackColor = Color.Transparent;
+            txtId.Background_WidthPen = 3F;
+            txtId.BackgroundPen = true;
+            txtId.ColorBackground = Color.FromArgb(37, 52, 68);
+            txtId.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            txtId.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtId.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtId.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtId.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtId.Enabled = false;
+            txtId.Font = new Font("Arial", 8F);
+            txtId.ForeColor = Color.FromArgb(245, 245, 245);
+            txtId.Lighting = false;
+            txtId.LinearGradientPen = false;
+            txtId.Location = new Point(152, 11);
+            txtId.Name = "txtId";
+            txtId.PenWidth = 15;
+            txtId.RGB = false;
+            txtId.Rounding = true;
+            txtId.RoundingInt = 60;
+            txtId.Size = new Size(158, 32);
+            txtId.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtId.TabIndex = 12;
+            txtId.Tag = "Cyber";
+            txtId.TextButton = "";
+            txtId.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtId.Timer_RGB = 300;
+            // 
+            // lblId
+            // 
+            lblId.AutoSize = true;
+            lblId.BackColor = Color.Transparent;
+            lblId.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblId.ForeColor = Color.LightGray;
+            lblId.Location = new Point(84, 14);
+            lblId.Name = "lblId";
+            lblId.Size = new Size(28, 25);
+            lblId.TabIndex = 11;
+            lblId.Text = "Id";
             // 
             // btnEditar
             // 
@@ -202,41 +250,41 @@
             btnEditar.Timer_RGB = 300;
             btnEditar.Click += btnEditar_Click;
             // 
-            // foreverLabel3
+            // lblSenha
             // 
-            foreverLabel3.AutoSize = true;
-            foreverLabel3.BackColor = Color.Transparent;
-            foreverLabel3.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            foreverLabel3.ForeColor = Color.LightGray;
-            foreverLabel3.Location = new Point(65, 144);
-            foreverLabel3.Name = "foreverLabel3";
-            foreverLabel3.Size = new Size(64, 25);
-            foreverLabel3.TabIndex = 9;
-            foreverLabel3.Text = "Senha";
+            lblSenha.AutoSize = true;
+            lblSenha.BackColor = Color.Transparent;
+            lblSenha.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblSenha.ForeColor = Color.LightGray;
+            lblSenha.Location = new Point(71, 149);
+            lblSenha.Name = "lblSenha";
+            lblSenha.Size = new Size(64, 25);
+            lblSenha.TabIndex = 9;
+            lblSenha.Text = "Senha";
             // 
-            // foreverLabel2
+            // lblNome
             // 
-            foreverLabel2.AutoSize = true;
-            foreverLabel2.BackColor = Color.Transparent;
-            foreverLabel2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            foreverLabel2.ForeColor = Color.LightGray;
-            foreverLabel2.Location = new Point(67, 95);
-            foreverLabel2.Name = "foreverLabel2";
-            foreverLabel2.Size = new Size(63, 25);
-            foreverLabel2.TabIndex = 8;
-            foreverLabel2.Text = "Nome";
+            lblNome.AutoSize = true;
+            lblNome.BackColor = Color.Transparent;
+            lblNome.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblNome.ForeColor = Color.LightGray;
+            lblNome.Location = new Point(71, 100);
+            lblNome.Name = "lblNome";
+            lblNome.Size = new Size(63, 25);
+            lblNome.TabIndex = 8;
+            lblNome.Text = "Nome";
             // 
-            // foreverLabel1
+            // lblEmail
             // 
-            foreverLabel1.AutoSize = true;
-            foreverLabel1.BackColor = Color.Transparent;
-            foreverLabel1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            foreverLabel1.ForeColor = Color.LightGray;
-            foreverLabel1.Location = new Point(71, 47);
-            foreverLabel1.Name = "foreverLabel1";
-            foreverLabel1.Size = new Size(58, 25);
-            foreverLabel1.TabIndex = 7;
-            foreverLabel1.Text = "Email";
+            lblEmail.AutoSize = true;
+            lblEmail.BackColor = Color.Transparent;
+            lblEmail.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblEmail.ForeColor = Color.LightGray;
+            lblEmail.Location = new Point(71, 54);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(58, 25);
+            lblEmail.TabIndex = 7;
+            lblEmail.Text = "Email";
             // 
             // txtEmail
             // 
@@ -250,17 +298,17 @@
             txtEmail.ColorPen_1 = Color.FromArgb(29, 200, 238);
             txtEmail.ColorPen_2 = Color.FromArgb(37, 52, 68);
             txtEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            txtEmail.Font = new Font("Arial", 10F);
+            txtEmail.Font = new Font("Arial", 8F);
             txtEmail.ForeColor = Color.FromArgb(245, 245, 245);
             txtEmail.Lighting = false;
             txtEmail.LinearGradientPen = false;
-            txtEmail.Location = new Point(152, 39);
+            txtEmail.Location = new Point(152, 54);
             txtEmail.Name = "txtEmail";
             txtEmail.PenWidth = 15;
             txtEmail.RGB = false;
             txtEmail.Rounding = true;
             txtEmail.RoundingInt = 60;
-            txtEmail.Size = new Size(507, 40);
+            txtEmail.Size = new Size(507, 32);
             txtEmail.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             txtEmail.TabIndex = 6;
             txtEmail.Tag = "Cyber";
@@ -280,17 +328,17 @@
             txtNome.ColorPen_1 = Color.FromArgb(29, 200, 238);
             txtNome.ColorPen_2 = Color.FromArgb(37, 52, 68);
             txtNome.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            txtNome.Font = new Font("Arial", 10F);
+            txtNome.Font = new Font("Arial", 7F);
             txtNome.ForeColor = Color.FromArgb(245, 245, 245);
             txtNome.Lighting = false;
             txtNome.LinearGradientPen = false;
-            txtNome.Location = new Point(152, 85);
+            txtNome.Location = new Point(152, 100);
             txtNome.Name = "txtNome";
             txtNome.PenWidth = 15;
             txtNome.RGB = false;
             txtNome.Rounding = true;
             txtNome.RoundingInt = 60;
-            txtNome.Size = new Size(507, 40);
+            txtNome.Size = new Size(507, 30);
             txtNome.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             txtNome.TabIndex = 5;
             txtNome.Tag = "Cyber";
@@ -310,11 +358,11 @@
             txtSenha.ColorPen_1 = Color.FromArgb(29, 200, 238);
             txtSenha.ColorPen_2 = Color.FromArgb(37, 52, 68);
             txtSenha.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
-            txtSenha.Font = new Font("Arial", 10F);
+            txtSenha.Font = new Font("Arial", 7F);
             txtSenha.ForeColor = Color.FromArgb(245, 245, 245);
             txtSenha.Lighting = false;
             txtSenha.LinearGradientPen = false;
-            txtSenha.Location = new Point(152, 134);
+            txtSenha.Location = new Point(152, 144);
             txtSenha.Name = "txtSenha";
             txtSenha.Password = true;
             txtSenha.PasswordChar = '*';
@@ -322,7 +370,7 @@
             txtSenha.RGB = false;
             txtSenha.Rounding = true;
             txtSenha.RoundingInt = 60;
-            txtSenha.Size = new Size(402, 40);
+            txtSenha.Size = new Size(402, 30);
             txtSenha.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             txtSenha.TabIndex = 4;
             txtSenha.Tag = "Cyber";
@@ -516,9 +564,9 @@
         private ReaLTaiizor.Forms.ForeverForm foreverForm1;
         private ReaLTaiizor.Controls.CyberGroupBox cyberGroupBox1;
         private ReaLTaiizor.Controls.CyberButton btnEditar;
-        private ReaLTaiizor.Controls.ForeverLabel foreverLabel3;
-        private ReaLTaiizor.Controls.ForeverLabel foreverLabel2;
-        private ReaLTaiizor.Controls.ForeverLabel foreverLabel1;
+        private ReaLTaiizor.Controls.ForeverLabel lblSenha;
+        private ReaLTaiizor.Controls.ForeverLabel lblNome;
+        private ReaLTaiizor.Controls.ForeverLabel lblEmail;
         private ReaLTaiizor.Controls.CyberTextBox txtEmail;
         private ReaLTaiizor.Controls.CyberTextBox txtNome;
         private ReaLTaiizor.Controls.CyberTextBox txtSenha;
@@ -527,5 +575,7 @@
         private ReaLTaiizor.Controls.CyberButton btnSalvar;
         private ReaLTaiizor.Controls.CyberButton btnNovo;
         private ReaLTaiizor.Controls.PoisonDataGridView dgvUsuarios;
+        private ReaLTaiizor.Controls.CyberTextBox txtId;
+        private ReaLTaiizor.Controls.ForeverLabel lblId;
     }
 }
